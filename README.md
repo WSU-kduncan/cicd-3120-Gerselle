@@ -68,12 +68,13 @@ You will notice that each part has "Milestone" labels and dates. This project is
 ### Creating listener
 1. First, use `sudo apt install webhook` to download the webhooks tool, which is the main component of making this stuff work
 2. Next, place the files in the `hooks` directory anywhere on the server where the webhook will be running on
-3. 
+3. Then use the command `/path/to/webhook -hooks hooks.json -verbose` to start the webhook, you need to leave this running
+4. When a outside client sends a request to the server, it will automatically attempt to start the script that's in `hooks`
 
 ### Setting up notifier for GitHub or DockerHub
 1. Admittedly, I couldn't get the webhook to work properly, the webhook tool would keep throwing a fork/exec error every time my client sent a request
-2. But if it was working, this is how I'm pretty sure it would work for both platforms
-    * Github - Add an addition secret, DEPLOY_WEBHOOK_URL, and add the following to the current apache.yml file or another workflow like it:
+2. But if it was working, this is how I'm pretty sure it would work on both platforms
+    * Github - Add an additional secret, DEPLOY_WEBHOOK_URL, and add the following to the current apache.yml file or another workflow like it:
         ``` 
             redeploy:
                 name: Redeploy - Webhook call
@@ -88,6 +89,6 @@ You will notice that each part has "Milestone" labels and dates. This project is
         ```
     * DockerHub - 
         * First go to your repository and click on `Webhooks`
-        * Create a webhook with by thinking of a name for it and putting in its url
+        * Create a webhook by thinking of a name for it and putting in its url
         * ???
         * PROFIT!!!
