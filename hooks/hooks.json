@@ -1,8 +1,7 @@
 [
   {
     "id": "redeploy",
-    "execute-command": "/home/ubuntu/hooks/redeploy.sh",
-    "command-working-directory": "/home/ubuntu/hooks",
-
+    "execute-command": "/home/ubuntu/cicd-3120-Gerselle/hooks/redeploy.sh",
+    "command-working-directory": "/home/ubuntu/cicd-3120-Gerselle/hooks"
   }
 ]
